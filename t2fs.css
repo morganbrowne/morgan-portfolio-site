@@ -1,0 +1,155 @@
+body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+nav {
+  background-color: black;
+  width: 100%;
+  height: 50px;
+}
+
+nav a {
+  font-family: 'Crimson Text';
+  font-size: 34px;
+  text-decoration: none;
+  color: white;
+}
+nav a:visited {
+  font-family: 'Crimson Text';
+  font-size: 34px;
+  text-decoration: none;
+  color: white;
+}
+
+.main-container {
+  width: 100%;
+  height: 100;
+  background-color: black;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.main-container h3 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 34px;
+  color: white;
+  font-family: 'Crimson Text';
+  font-weight: lighter;
+
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping if the screen is too narrow */
+  justify-content: center; /* Center the containers */
+  gap: 20px; /* Add space between the video and text containers */
+}
+
+.video-container {
+  flex: 1 1 500px; /* Allow the container to grow/shrink with a base width of 500px */
+  max-width: 800px; /* Prevent it from growing too large */
+  height: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 50px;
+}
+
+.styled-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.styled-video:hover {
+  transform: scale(1.05);
+}
+
+.main-text-container {
+  flex: 1 1 400px; /* Allow the container to grow/shrink with a base width of 300px */
+  max-width: 600px; /* Prevent it from growing too large */
+  height: 400px;
+  background-color: black;
+  margin-top: 50px;
+  box-sizing: border-box;
+  float: right;
+}
+
+.main-text-container p {
+  color: white;
+  font-family: 'Crimson Text';
+  font-size: 18px;
+}
+
+.btn-flip2 {
+  opacity: 1;
+  outline: 0;
+  color: #fff;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Crimson Text';
+  text-transform: uppercase;
+  text-align: center;
+  position: absolute;
+  top: 575px;
+  left: 950px;
+  width: 400px;
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 4s ease-in-out forwards; /* Fade in over 2 seconds */
+}
+.btn-flip2:hover:after {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+}
+.btn-flip2:hover:before {
+  opacity: 0;
+  transform: translateY(50%) rotateX(90deg);
+}
+.btn-flip2:after {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  color: #323237;
+  display: block;
+  transition: 0.5s;
+  position: absolute;
+  background: #adadaf;
+  content: attr(data-back);
+  transform: translateY(-50%) rotateX(90deg);
+  line-height: 50px;
+}
+.btn-flip2:before {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  color: #adadaf;
+  display: block;
+  padding: 0 30px;
+  line-height: 50px;
+  transition: 0.5s;
+  position: relative;
+  background: #323237;
+  content: attr(data-front);
+  transform: translateY(0) rotateX(0);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.button {
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 2s ease-in-out forwards; /* Fade in over 2 seconds */
+}
